@@ -1,0 +1,72 @@
+---
+import "../styles/global.css";
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Race Camp GP</title>
+    <meta
+      name="description"
+      content="You Ship: An F1 Project | We Ship: F1 prizes!"
+    />
+  </head>
+
+  <body class="bg-neutral-800 text-white flex flex-col items-center">
+    <header
+      class="relative w-full min-h-screen text-white flex items-center justify-center flex-col gap-2 overflow-hidden"
+    >
+      <a href="https://hackclub.com">
+        <div
+          class="absolute top-0 left-[2vh] w-48 h-24 bg-no-repeat bg-contain cursor-pointer
+      transition-all duration-300 ease-out hover:w-64 hover:h-32 z-50"
+          style="background-image: url('https://assets.hackclub.com/flag-orpheus-top.svg');"
+        >
+        </div>
+      </a>
+
+      <video
+        class="absolute inset-0 w-full h-full object-cover"
+        autoplay
+        muted
+        loop
+        playsinline
+        preload="metadata"
+      >
+        <source src="/header.mp4" type="video/mp4" />
+      </video>
+
+      <div class="absolute inset-0 bg-black/65"></div>
+
+      <div class="relative z-10 text-center flex flex-col gap-4 items-center">
+        <h1 class="text-5xl font-bold">Race Camp GP</h1>
+        <hr class="w-full" />
+        <p class="font-extralight text-xl">
+          You Ship: An F1 Project | We Ship: F1 prizes!
+        </p>
+        <button class="bg-blue-500 w-1/4 rounded-lg p-2">
+          <a
+            href="https://forms.fillout.com/t/hPRF3hgi1yus"
+            onclick="window.open(this.href, 'rsvpWindow', 'width=600,height=800'); return false;"
+          >
+            RSVP Here!</a
+          >
+        </button>
+      </div>
+    </header>
+
+    <div class="py-4"></div>
+    <hr class="w-full border-neutral-950" />
+    <footer class="w-full py-4 text-center text-sm text-white/50">
+      <a
+        href="https://github.com/BananaJeanss/race-camp-gp-site"
+        class="underline">Source Code</a
+      >
+      |
+      <a href="https://hackclub.com/" class="underline">Hack Club</a>
+    </footer>
+  </body>
+</html>
