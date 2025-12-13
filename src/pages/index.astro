@@ -6,7 +6,7 @@ import "../styles/global.css";
   <head>
     <meta charset="utf-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="generator" content={Astro.generator} />
     <title>Race Camp GP</title>
     <meta
@@ -15,17 +15,20 @@ import "../styles/global.css";
     />
   </head>
 
-  <body class="bg-neutral-800 text-white flex flex-col items-center">
+  <body class="bg-neutral-900 text-white flex flex-col items-center">
     <header
       class="relative w-full min-h-screen text-white flex items-center justify-center flex-col gap-2 overflow-hidden"
     >
-      <a href="https://hackclub.com">
-        <div
-          class="absolute top-0 left-[2vh] w-48 h-24 bg-no-repeat bg-contain cursor-pointer
-      transition-all duration-300 ease-out hover:w-64 hover:h-32 z-50"
-          style="background-image: url('https://assets.hackclub.com/flag-orpheus-top.svg');"
-        >
-        </div>
+      <a
+        href="https://hackclub.com"
+        target="_blank"
+        class="absolute top-0 left-4 z-50 w-48 hover:w-64 transition-all duration-300 ease-out"
+      >
+        <img
+          src="https://assets.hackclub.com/flag-orpheus-top.svg"
+          alt="Hack Club"
+          class="w-full"
+        />
       </a>
 
       <video
@@ -41,7 +44,9 @@ import "../styles/global.css";
 
       <div class="absolute inset-0 bg-black/65"></div>
 
-      <div class="relative z-10 text-center flex flex-col gap-4 items-center">
+      <div
+        class="relative z-10 text-center flex flex-col gap-4 items-center w-10/12 sm:w-auto"
+      >
         <h1 class="text-5xl font-bold">Race Camp GP</h1>
         <hr class="w-full" />
         <p class="font-extralight text-xl">
@@ -56,9 +61,81 @@ import "../styles/global.css";
           >
         </button>
       </div>
+
+      <div
+        class="absolute bottom-10 z-10 animate-bounce transition"
+        style="font-size: 5rem;"
+      >
+        ⬇
+      </div>
     </header>
 
-    <div class="py-4"></div>
+    <div
+      class="py-8 flex flex-col w-10/12 lg:w-1/2 text-wrap items-center break-all"
+    >
+      <h2 class="text-3xl font-bold text-center mb-4">FAQ</h2>
+      <div class="max-w-3xl w-full space-y-6">
+        <div class="flex flex-row">
+          <div class="flex flex-col">
+            <div class="pb-4">
+              <h3 class="text-xl font-semibold underline pb-2">
+                What are the prizes?
+              </h3>
+              <p>
+                15 hours - F1 game/car game grant<br />
+                4 hours - F1 hot wheels grant<br />
+                7 hours - F1 lego speed champions set<br />
+                Around 60 hours - F1 lego technic set<br />
+                75 or 80 hours - Racing sim (Moza R3 bundle)<br />
+                Grant for racing sim accessories/Die cast models etc - 4$/hr<br
+                />
+                150 hours minimum - F1 Grand prix tickets<br />
+              </p>
+            </div>
+          </div>
+          <div class="hidden sm:block pl-18">
+            <img
+              src="/rb21.jpg"
+              alt="RB21"
+              class="w-48 h-auto rounded-lg shadow-lg"
+            />
+          </div>
+        </div>
+        <hr class="w-full border-neutral-600" />
+        <div class="flex flex-row">
+          <div class="hidden sm:block pr-18">
+            <img
+              src="/alpine.jpg"
+              alt="RB21"
+              class="w-48 h-auto rounded-lg shadow-lg"
+            />
+          </div>
+          <div class="flex flex-col">
+            <div class="pb-4">
+              <h3 class="text-xl font-semibold underline pb-2">
+                What are the prizes?
+              </h3>
+              <p>
+                15 hours - F1 game/car game grant<br />
+                4 hours - F1 hot wheels grant<br />
+                7 hours - F1 lego speed champions set<br />
+                Around 60 hours - F1 lego technic set<br />
+                75 or 80 hours - Racing sim (Moza R3 bundle)<br />
+                Grant for racing sim accessories/Die cast models etc - 4$/hr<br
+                />
+                150 hours minimum - F1 Grand prix tickets<br />
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <hr class="w-full border-neutral-600" />
+    <div
+      class="py-8 flex flex-col w-10/12 lg:w-1/2 text-wrap items-center break-all"
+    >
+      <h2 class="text-3xl font-bold text-center mb-4">Requirements</h2>
+    </div>
     <hr class="w-full border-neutral-950" />
     <footer class="w-full py-4 text-center text-sm text-white/50">
       <a
@@ -68,5 +145,40 @@ import "../styles/global.css";
       |
       <a href="https://hackclub.com/" class="underline">Hack Club</a>
     </footer>
+    <script>
+      // if scroll is more than past header we can hide animate-bounce
+      window.addEventListener("scroll", () => {
+        const bounceArrow = document.querySelector(
+          ".animate-bounce"
+        ) as HTMLElement;
+        if (bounceArrow == null) return;
+        if (window.scrollY > 25) {
+          bounceArrow.style.opacity = "0";
+        } else {
+          bounceArrow.style.opacity = "1";
+        }
+      });
+
+      // easter egg for unmuting the video cause y not
+      const expectedKeys = "ilovef1";
+      let expectedKeysbutarray = expectedKeys.split("");
+
+      let currentIndex = 0;
+      window.addEventListener("keydown", (event) => {
+        const key = event.key.toLowerCase();
+        if (key === expectedKeysbutarray[currentIndex]) {
+          currentIndex++;
+          if (currentIndex === expectedKeysbutarray.length) {
+            const video = document.querySelector("video") as HTMLVideoElement;
+            if (video) {
+              video.muted = !video.muted;
+            }
+            currentIndex = 0; // reset for future use
+          }
+        } else {
+          currentIndex = 0; // reset if wrong key
+        }
+      });
+    </script>
   </body>
 </html>
