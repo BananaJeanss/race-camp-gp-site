@@ -1,6 +1,18 @@
 ---
 import "../styles/global.css";
 import PrizeCard from "../components/PrizeCard";
+interface Prize {
+  title: string;
+  imageUrl: string;
+  timeReq: string;
+  sortOrder: number;
+  description?: string;
+}
+
+const prizes = (await import("../../public/prizes.json")).default as Prize[];
+
+const sortedPrizes = prizes.sort((a, b) => a.sortOrder - b.sortOrder);
+// i still hate astro
 ---
 
 <html lang="en">
@@ -208,41 +220,16 @@ import PrizeCard from "../components/PrizeCard";
     <div class="py-16 flex flex-col w-11/12 lg:w-3/4 items-center">
       <h2 class="text-4xl font-bold text-center mb-12 text-white">Prizes</h2>
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 w-full">
-        <PrizeCard
-          title="F1 Game/Car Game Grant"
-          imageUrl="/f125.webp"
-          timeReq="15 hours"
-        />
-        <PrizeCard
-          title="F1 Hot Wheels Grant"
-          imageUrl="/wheelshot.jpg"
-          timeReq="4 hours"
-        />
-        <PrizeCard
-          title="F1 Lego Speed Champions"
-          imageUrl="/speedchamp.jpg"
-          timeReq="7 hours"
-        />
-        <PrizeCard
-          title="F1 Lego Technic Set"
-          imageUrl="/merclego.webp"
-          timeReq="60 hours"
-        />
-        <PrizeCard
-          title="Racing Sim (Moza R3)"
-          imageUrl="/moza.jpg"
-          timeReq="75-80 hours"
-        />
-        <PrizeCard
-          title="Accessories / Die Cast"
-          imageUrl="/collage.jpg"
-          timeReq="$4/hr"
-        />
-        <PrizeCard
-          title="F1 Grand Prix Tickets"
-          imageUrl="/abudhabi.webp"
-          timeReq="150+ hours"
-        />
+        {
+          sortedPrizes.map((prize) => (
+            <PrizeCard
+              title={prize.title}
+              description={prize.description ?? undefined}
+              imageUrl={prize.imageUrl}
+              timeReq={prize.timeReq}
+            />
+          ))
+        }
       </div>
     </div>
 
