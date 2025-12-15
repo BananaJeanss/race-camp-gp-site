@@ -13,6 +13,7 @@ const prizes = (await import("../../public/prizes.json")).default as Prize[];
 
 const sortedPrizes = prizes.sort((a, b) => a.sortOrder - b.sortOrder);
 // i still hate astro
+const baseUrl = import.meta.env.BASE_URL;
 ---
 
 <html lang="en">
@@ -38,7 +39,7 @@ const sortedPrizes = prizes.sort((a, b) => a.sortOrder - b.sortOrder);
         class="absolute top-0 left-4 z-50 w-48 hover:w-64 transition-all duration-300 ease-out"
       >
         <img
-          src="https://assets.hackclub.com/flag-orpheus-top.svg"
+          src={`https://assets.hackclub.com/flag-orpheus-top.svg`}
           alt="Hack Club"
           class="w-full"
         />
@@ -52,7 +53,7 @@ const sortedPrizes = prizes.sort((a, b) => a.sortOrder - b.sortOrder);
         playsinline
         preload="metadata"
       >
-        <source src="/header.mp4" type="video/mp4" />
+        <source src={`${baseUrl}header.mp4`} type="video/mp4" />
       </video>
 
       <div class="absolute inset-0 bg-black/65"></div>
@@ -104,7 +105,7 @@ const sortedPrizes = prizes.sort((a, b) => a.sortOrder - b.sortOrder);
           </div>
           <div class="hidden sm:block pl-18">
             <img
-              src="/rb21.jpg"
+              src={`${baseUrl}rb21.jpg`}
               alt="RB21"
               class="w-48 h-auto rounded-lg shadow-lg"
             />
@@ -118,7 +119,7 @@ const sortedPrizes = prizes.sort((a, b) => a.sortOrder - b.sortOrder);
         <div class="flex flex-row">
           <div class="hidden sm:block pr-18">
             <img
-              src="/amggt4.jpg"
+              src={`${baseUrl}amggt4.jpg`}
               alt="RB21"
               class="w-48 h-auto rounded-lg shadow-lg"
             />
@@ -178,7 +179,7 @@ const sortedPrizes = prizes.sort((a, b) => a.sortOrder - b.sortOrder);
           </div>
           <div class="hidden sm:block pl-18">
             <img
-              src="/bmw.jpg"
+              src={`${baseUrl}bmw.jpg`}
               alt="RB21"
               class="w-48 h-auto rounded-lg shadow-lg"
             />
@@ -190,7 +191,7 @@ const sortedPrizes = prizes.sort((a, b) => a.sortOrder - b.sortOrder);
         <div class="flex flex-row">
           <div class="hidden sm:block pr-18">
             <img
-              src="/rp20.jpg"
+              src={`${baseUrl}rp20.jpg`}
               alt="RB21"
               class="w-48 h-auto rounded-lg shadow-lg"
             />
@@ -217,6 +218,7 @@ const sortedPrizes = prizes.sort((a, b) => a.sortOrder - b.sortOrder);
     <hr class="w-full border-neutral-950" />
 
     <!-- Prizes Section -->
+
     <div class="py-16 flex flex-col w-11/12 lg:w-3/4 items-center">
       <h2 class="text-4xl font-bold text-center mb-12 text-white">Prizes</h2>
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 w-full">
@@ -225,7 +227,7 @@ const sortedPrizes = prizes.sort((a, b) => a.sortOrder - b.sortOrder);
             <PrizeCard
               title={prize.title}
               description={prize.description ?? undefined}
-              imageUrl={prize.imageUrl}
+              imageUrl={`${baseUrl}${prize.imageUrl.replace(/^\/+/, "")}`}
               timeReq={prize.timeReq}
             />
           ))
