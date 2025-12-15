@@ -1,5 +1,6 @@
 ---
 import "../styles/global.css";
+import PrizeCard from "../components/PrizeCard";
 ---
 
 <html lang="en">
@@ -70,8 +71,9 @@ import "../styles/global.css";
       </div>
     </header>
 
+    <!-- FAQ section -->
     <div
-      class="py-8 flex flex-col w-10/12 lg:w-1/2 text-wrap items-center break-words"
+      class="py-8 flex flex-col w-10/12 lg:w-1/2 text-wrap items-center wrap-break-word"
     >
       <h2 class="text-3xl font-bold text-center mb-4">FAQ</h2>
       <div class="max-w-3xl w-full space-y-6">
@@ -79,7 +81,7 @@ import "../styles/global.css";
         <div class="flex flex-row">
           <div class="flex flex-col">
             <div class="pb-4">
-              <h3 class="text-xl font-semibold underline pb-2">
+              <h3 class="text-2xl font-semibold underline pb-2">
                 Can I participate?
               </h3>
               <p class="w-full">
@@ -99,38 +101,8 @@ import "../styles/global.css";
 
         <!-- -->
         <hr class="w-full border-neutral-600" />
-        <div class="flex flex-row">
-          <div class="hidden sm:block pr-18">
-            <img
-              src="/alpine.jpg"
-              alt="RB21"
-              class="w-48 h-auto rounded-lg shadow-lg"
-            />
-          </div>
-          <div class="flex flex-col">
-            <div class="pb-4">
-              <h3 class="text-xl font-semibold underline pb-2">
-                What are the prizes?
-              </h3>
-              <p>
-                <ul class="list-disc list-inside">
-                  <li>15 hours - F1 game/car game grant</li>
-                  <li>4 hours - F1 hot wheels grant</li>
-                  <li>7 hours - F1 lego speed champions set</li>
-                  <li>Around 60 hours - F1 lego technic set</li>
-                  <li>75 or 80 hours - Racing sim (Moza R3 bundle)</li>
-                  <li>
-                    Grant for racing sim accessories/Die cast models etc - $4/hr
-                  </li>
-                  <li>150 hours minimum - F1 Grand prix tickets</li>
-                </ul>
-              </p>
-            </div>
-          </div>
-        </div>
 
         <!-- what are the requirements -->
-        <hr class="w-full border-neutral-600" />
         <div class="flex flex-row">
           <div class="hidden sm:block pr-18">
             <img
@@ -141,7 +113,7 @@ import "../styles/global.css";
           </div>
           <div class="flex flex-col">
             <div class="pb-4 w-lg">
-              <h3 class="text-xl font-semibold underline pb-2">
+              <h3 class="text-2xl font-semibold underline pb-2">
                 What are the requirements?
               </h3>
               <p>
@@ -168,7 +140,7 @@ import "../styles/global.css";
         <div class="flex flex-row">
           <div class="flex flex-col">
             <div class="pb-4 w-lg">
-              <h3 class="text-xl font-semibold underline pb-2">
+              <h3 class="text-2xl font-semibold underline pb-2">
                 How do I get started?
               </h3>
               <p>
@@ -213,7 +185,7 @@ import "../styles/global.css";
           </div>
           <div class="flex flex-col">
             <div class="pb-4 w-lg">
-              <h3 class="text-xl font-semibold underline pb-2">
+              <h3 class="text-2xl font-semibold underline pb-2">
                 I have more questions!
               </h3>
               <p>
@@ -229,6 +201,52 @@ import "../styles/global.css";
         </div>
       </div>
     </div>
+
+    <hr class="w-full border-neutral-950" />
+
+    <!-- Prizes Section -->
+    <div class="py-16 flex flex-col w-11/12 lg:w-3/4 items-center">
+      <h2 class="text-4xl font-bold text-center mb-12 text-white">Prizes</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 w-full">
+        <PrizeCard
+          title="F1 Game/Car Game Grant"
+          imageUrl="/f125.webp"
+          timeReq="15 hours"
+        />
+        <PrizeCard
+          title="F1 Hot Wheels Grant"
+          imageUrl="/wheelshot.jpg"
+          timeReq="4 hours"
+        />
+        <PrizeCard
+          title="F1 Lego Speed Champions"
+          imageUrl="/speedchamp.jpg"
+          timeReq="7 hours"
+        />
+        <PrizeCard
+          title="F1 Lego Technic Set"
+          imageUrl="/merclego.webp"
+          timeReq="60 hours"
+        />
+        <PrizeCard
+          title="Racing Sim (Moza R3)"
+          imageUrl="/moza.jpg"
+          timeReq="75-80 hours"
+        />
+        <PrizeCard
+          title="Accessories / Die Cast"
+          imageUrl="/collage.jpg"
+          timeReq="$4/hr"
+        />
+        <PrizeCard
+          title="F1 Grand Prix Tickets"
+          imageUrl="/abudhabi.webp"
+          timeReq="150+ hours"
+        />
+      </div>
+    </div>
+
+    <!-- footer stuff -->
     <hr class="w-full border-neutral-950" />
     <footer class="w-full py-4 text-center text-sm text-white/50">
       <a
