@@ -1,47 +1,52 @@
+<div align="center">
+
 # race-camp-gp-site
-site for race-camp-gp
 
+The website for race-camp-gp.
 
-# Astro Starter Kit: Minimal
+[Slack Channel](https://hackclub.enterprise.slack.com/archives/C09MZ097XGC) | [Website](https://bananajeanss.github.io/race-camp-gp-site/) | [Hack Club](https://hackclub.com/)
 
-```sh
-npm create astro@latest -- --template minimal
-```
+</div>
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+## What is Race Camp GP?
 
-## 🚀 Project Structure
+Race Camp GP is a YSWS for Racing/F1 fans, where you ship an f1 project, and we ship f1 prizes!
 
-Inside of your Astro project, you'll see the following folders and files:
+Check the website at <https://bananajeanss.github.io/race-camp-gp-site/> for more information.
 
-```text
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
+Questions? Join the [Slack Channel](https://hackclub.enterprise.slack.com/archives/C09MZ097XGC) and ask away any questions you have.
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+## Quick Start & Contributing
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+1. Clone the repo:
 
-Any static assets, like images, can be placed in the `public/` directory.
+   ```bash
+   git clone https://github.com/BananaJeanss/race-camp-gp-site.git
+   ```
 
-## 🧞 Commands
+2. Navigate to the project directory
 
-All commands are run from the root of the project, from a terminal:
+   ```bash
+   cd race-camp-gp-site
+   ```
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+3. Install dependencies:
 
-## 👀 Want to learn more?
+   ```bash
+   npm i
+   ```
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+4. Start the development server:
+
+   ```bash
+    npm run dev
+   ```
+
+5. Open your browser and go to `http://localhost:3000` to see the website.
+   The dev script also uses `--host`, so you can access it on your local network, e.g. your phone.
+
+6. Commit your changes, and open a Pull Request.
+
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
