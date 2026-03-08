@@ -4,19 +4,18 @@ import RSVPButton from "./RSVPButton";
 import ScrollEffects from "./ScrollEffects";
 import Image from "next/image";
 
-interface Prize {
-  title: string;
-  imageUrl: string;
-  timeReq: string;
-  sortOrder: number;
-  description?: string;
-}
-
-const sortedPrizes = (prizes as Prize[]).sort(
-  (a, b) => a.sortOrder - b.sortOrder
-);
-
 export default function Home() {
+  interface Prize {
+    title: string;
+    imageUrl: string;
+    timeReq: string;
+    sortOrder: number;
+    description?: string;
+  }
+
+  const sortedPrizes = (prizes as Prize[]).sort(
+    (a, b) => a.sortOrder - b.sortOrder,
+  );
   return (
     <>
       <header className="relative w-full min-h-screen text-white flex items-center justify-center flex-col gap-2 overflow-hidden">
@@ -112,8 +111,7 @@ export default function Home() {
                 <ul className="list-disc list-inside">
                   <li>Your project must be F1 related.</li>
                   <li>
-                    Your project &amp; source code must be original, no
-                    copying!
+                    Your project &amp; source code must be original, no copying!
                   </li>
                   <li>
                     Your code must be open-sourced in a public repository.
@@ -147,12 +145,12 @@ export default function Home() {
                     to track your coding time
                   </li>
                   <li>
-                    Make a publicly accessible repository for your project,
-                    the code must be open-sourced!
+                    Make a publicly accessible repository for your project, the
+                    code must be open-sourced!
                   </li>
                   <li>
-                    Start building your F1 related project! Don&apos;t forget
-                    to commit your changes often.
+                    Start building your F1 related project! Don&apos;t forget to
+                    commit your changes often.
                   </li>
                   <li>Once finished, submit via this link link here later</li>
                 </ol>
