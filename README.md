@@ -12,7 +12,7 @@
 
 The website for race-camp-gp.
 
-[Slack Channel](https://hackclub.enterprise.slack.com/archives/C09MZ097XGC) | [Website](https://bananajeanss.github.io/race-camp-gp-site/) | [Hack Club](https://hackclub.com/)
+[Slack Channel](https://hackclub.enterprise.slack.com/archives/C09MZ097XGC) | [Website](https://race-camp-gp.vercel.app/) | [Hack Club](https://hackclub.com/)
 
 </div>
 
@@ -20,7 +20,7 @@ The website for race-camp-gp.
 
 Race Camp GP is a YSWS for Racing/F1 fans, where you ship an f1 project, and we ship f1 prizes!
 
-Check the website at <https://bananajeanss.github.io/race-camp-gp-site/> for more information.
+Check the website at <https://race-camp-gp.vercel.app/> for more information.
 
 Questions? Join the [Slack Channel](https://hackclub.enterprise.slack.com/archives/C09MZ097XGC) and ask away any questions you have.
 
