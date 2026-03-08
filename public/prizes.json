@@ -1,0 +1,44 @@
+[
+  {
+    "title": "F1 Game/Car Game Grant",
+    "imageUrl": "/f125.webp",
+    "timeReq": "15 hours",
+    "sortOrder": 15
+  },
+  {
+    "title": "F1 Hot Wheels Grant",
+    "imageUrl": "/wheelshot.jpg",
+    "timeReq": "4 hours",
+    "sortOrder": 4
+  },
+  {
+    "title": "F1 Lego Speed Champions",
+    "imageUrl": "/speedchamp.jpg",
+    "timeReq": "7 hours",
+    "sortOrder": 7
+  },
+  {
+    "title": "F1 Lego Technic Set",
+    "imageUrl": "/merclego.webp",
+    "timeReq": "60 hours",
+    "sortOrder": 60
+  },
+  {
+    "title": "Racing Sim (Moza R3)",
+    "imageUrl": "/moza.jpg",
+    "timeReq": "75-80 hours",
+    "sortOrder": 75
+  },
+  {
+    "title": "Accessories / Die Cast",
+    "imageUrl": "/collage.jpg",
+    "timeReq": "$4/hr",
+    "sortOrder": 4
+  },
+  {
+    "title": "F1 Grand Prix Tickets",
+    "imageUrl": "/abudhabi.webp",
+    "timeReq": "150+ hours",
+    "sortOrder": 150
+  }
+]
